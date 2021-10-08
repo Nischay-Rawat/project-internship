@@ -16,7 +16,6 @@ router.post('/',async(req,res)=>{
     const child= new Children({name, sex,dob,father_name,mother_name,district_id,photo,});
     await child.save();
     const token = child.generateAuthToken()
-    console.log(token);
         res.header('Authorization',token).send("created Successfully\n"+child)
 });
 export default router;

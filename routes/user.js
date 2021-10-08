@@ -32,7 +32,7 @@ router.post('/login',async (req,res)=>{
     res.header('authtoken',token).send("logged in Sucessfully");
 })
 
-
+// here only removing the jwt 
 router.post('/logout',(req,res)=>{
     res.removeHeader('authtoken');
     res.send('logout successfully')
