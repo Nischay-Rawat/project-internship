@@ -1,4 +1,5 @@
 import mongoose from 'mongoose'
+import Joi from 'joi'
 const districtSchema=new mongoose.Schema({
     state_id:{
         type:Number,
@@ -13,5 +14,13 @@ const districtSchema=new mongoose.Schema({
 })
 const District = new mongoose.model('District',districtSchema);
 
-export default District;
+function validateDistrict(district){
+    const schema=Joi.object({
+       state_id:Joi.number().required(),
+       district_name:Joi.string().required()
+
+    })
+    return schema.validate(district);
+    }
+export {District ,validateDistrict as validate};
 

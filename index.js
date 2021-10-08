@@ -5,6 +5,10 @@ import state  from './routes/state.js'
 import children  from './routes/children.js'
 import user from './routes/user.js'
 import district from './routes/district.js'
+import Joi from 'joi'
+import JoiObjectId from 'joi-objectid'
+Joi.myJoiObjectId=JoiObjectId(Joi);
+
 const app = express();
 
 app.use(express.json());
