@@ -25,5 +25,5 @@ app.use('/api/child',children);
 const port = process.env.PORT||3000;
 
 app.listen(port,()=>{
-    console.log('Sir mai chal gya');
+    console.log(`Server is listening on port no ${port}`);
 })
